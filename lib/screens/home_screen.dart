@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:notes_app/screens/note_reader.dart';
 import 'package:notes_app/style/app_style.dart';
 import '../widgets/note_card.dart';
+import 'note_editor.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -78,7 +79,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => NoteEditorScreen()));
+        },
         label: const Text("Add Notes"),
         icon: const Icon(Icons.add),
       ),
